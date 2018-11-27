@@ -57,13 +57,12 @@ https://scihub.copernicus.eu/twiki/do/view/SciHubUserGuide/3FullTextSearch#Searc
 print(datetime.now())
 
 # needed keywords
-user = 'user'
-password = 'password'
-area = '../coordinates_test_sites/coordinates_mni.geojson'
+user = 'xxx'
+password = 'xxx'
+area = '../coordinates_test_sites/capitanata.geojson'
 api_url = 'https://scihub.copernicus.eu/apihub/'
-path = '/media/nas_data/Thomas/Wallerfing/Sentinel_1_data'
-initial_date = '20170525'
-end_date = datetime.now()
+path = '/media/nas_data/Thomas/Sentinel_1_data/foggia_italy'
+date = ('20170101', '20171231')
 download = 'yes'
 
 # additional keywords Sentinel 1 and 2
@@ -84,9 +83,12 @@ swathidentifier = '*'
 # additional keywords Sentinel 2 only
 cloudcoverpercentage = '*'
 
-result_sentinel1 = all_in_one(user, password, area=area, api_url=api_url, path=path, initial_date=initial_date, end_date=end_date, download=download, platformname=platformname, filename=filename, orbitnumber=orbitnumber, lastorbitnumber=lastorbitnumber, orbitdirection=orbitdirection, polarisationmode=polarisationmode, producttype=producttype, relativeorbitnumber=relativeorbitnumber, lastrelativeorbitnumber=lastrelativeorbitnumber, sensoroperationalmode=sensoroperationalmode, swathidentifier=swathidentifier)
+# other additional keywords
+show_progressbars = True
 
-result_sentinel2 = all_in_one(user, password, area=area, api_url=api_url, path=path, initial_date=initial_date, end_date=end_date, download=download, platformname=platformname, filename=filename, orbitnumber=orbitnumber, orbitdirection=orbitdirection, producttype=producttype, relativeorbitnumber=relativeorbitnumber, sensoroperationalmode=sensoroperationalmode, cloudcoverpercentage=cloudcoverpercentage)
+result_sentinel1, check_files, check_dic = all_in_one(user, password, area=area, api_url=api_url, show_progressbars=show_progressbars, path=path, date=date, download=download, platformname=platformname, filename=filename, orbitnumber=orbitnumber, lastorbitnumber=lastorbitnumber, orbitdirection=orbitdirection, polarisationmode=polarisationmode, producttype=producttype, relativeorbitnumber=relativeorbitnumber, lastrelativeorbitnumber=lastrelativeorbitnumber, sensoroperationalmode=sensoroperationalmode, swathidentifier=swathidentifier)
+
+# result_sentinel2, check_files2 = all_in_one(user, password, area=area, api_url=api_url, show_progressbars=show_progressbars, path=path, date=date, download=download, platformname=platformname, filename=filename, orbitnumber=orbitnumber, orbitdirection=orbitdirection, producttype=producttype, relativeorbitnumber=relativeorbitnumber, sensoroperationalmode=sensoroperationalmode, cloudcoverpercentage=cloudcoverpercentage)
 
 print(datetime.now())
 
