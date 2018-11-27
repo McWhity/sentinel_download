@@ -23,8 +23,7 @@ area : area of interest
     input of geojson-file with coordinates of a polygon (e.g. 'coordinates.geojson')
 api_url: url of Sentinel Scientific Data Hub
 path: path where to store the data
-initial_date (date when data was taken): start date of the query (e.g. '20160101'; datetime(2016, 1, 1, 12, 5); date(2016,1,1))
-end_date (date when data was taken): end date of the query (e.g. '20160102'; datetime(2016, 1, 2, 12, 5); date(2016,1,2))
+date (start and end date): (e.g. ('20160101', datetime(2017, 1, 1, 12, 5))
 download :
     'no' only query but no download of the data (default setting)
     'yes' query and download all results of the query
