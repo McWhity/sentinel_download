@@ -1,5 +1,5 @@
 # sentinel_download
-Template to download Sentinel data from the Copernicus Open Access Hub with python package sentinelsat version 0.12.2 (https://github.com/ibamacsr/sentinelsat; documentation published at http://sentinelsat.readthedocs.io/)
+Template to download Sentinel data from the Copernicus Open Access Hub with python package sentinelsat version 0.13 (https://github.com/ibamacsr/sentinelsat; documentation published at http://sentinelsat.readthedocs.io/)
 
 ### getting started
 * install python packages sentinelsat, pycurl and homora (probably also some other dependencies)
