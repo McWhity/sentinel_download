@@ -56,14 +56,14 @@ https://scihub.copernicus.eu/twiki/do/view/SciHubUserGuide/3FullTextSearch#Searc
 print(datetime.now())
 
 # needed keywords
-user = ''
-password = ''
+user = 'xxx'
+password = 'xxx'
 area = '../coordinates_test_sites/coordinates_mni.geojson'
 api_url = 'https://scihub.copernicus.eu/apihub/'
-path = '/media/nas_data/Thomas/S1/data/Wallerfing'
-date = ('20170110', '20170115')
-check_if_already_downloaded = 'yes'
-download = 'yes'
+path = '/media/nas_data/Thomas/S1/data/MNI'
+date = ('20180101', '20180131')
+check_if_already_downloaded = 'no'
+download = 'no'
 
 # additional keywords Sentinel 1 and 2
 platformname = 'Sentinel-1'
@@ -89,19 +89,22 @@ show_progressbars = True
 result_sentinel1, check_files, check_dic, successful_downloaded, successful_triggered_retrieval = all_in_one(user, password, area=area, api_url=api_url, show_progressbars=show_progressbars, path=path, date=date, download=download, check_if_already_downloaded=check_if_already_downloaded, platformname=platformname, filename=filename, orbitnumber=orbitnumber, lastorbitnumber=lastorbitnumber, orbitdirection=orbitdirection, polarisationmode=polarisationmode, producttype=producttype, relativeorbitnumber=relativeorbitnumber, lastrelativeorbitnumber=lastrelativeorbitnumber, sensoroperationalmode=sensoroperationalmode, swathidentifier=swathidentifier)
 
 print('failed S1 products:')
-print(result_sentinel1[2])
+try:
+    print(result_sentinel1[2])
+except KeyError:
+    print()
 
 print('successful downloaded S1 products:')
 try:
     print(successful_downloaded['title'].values)
-except KeyError:
-    print()
+except (KeyError, TypeError) as e:
+    pass
 
 print('successful triggered retrieval of S1 products:')
 try:
     print(successful_triggered_retrieval['title'].values)
-except KeyError:
-    print()
+except (KeyError, TypeError) as e:
+    pass
 
 # result_sentinel2, check_files2,, successful_downloaded2, successful_triggered_retrieval2  = all_in_one(user, password, area=area, api_url=api_url, show_progressbars=show_progressbars, path=path, date=date, download=download, platformname=platformname, filename=filename, orbitnumber=orbitnumber, orbitdirection=orbitdirection, producttype=producttype, relativeorbitnumber=relativeorbitnumber, sensoroperationalmode=sensoroperationalmode, cloudcoverpercentage=cloudcoverpercentage)
 

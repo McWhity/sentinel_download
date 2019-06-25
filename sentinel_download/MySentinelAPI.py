@@ -52,7 +52,7 @@ def all_in_one(user, password, area, api_url='https://scihub.copernicus.eu/apihu
 
         return result, check_files, check_dic, successful_downloaded, successful_triggered_retrieval
 
-    return products_df, None, check_dic
+    return products_df, None, check_dic, None, None
 
 
 
